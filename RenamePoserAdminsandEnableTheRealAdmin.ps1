@@ -1,3 +1,4 @@
+Write-Verbose "Fetching all the users... this may take a minute" -Verbose 
 $LocalUsers = Get-CimInstance Win32_UserAccount
 $administrator = $LocalUsers | where {($_.SID -match "^.*?-500$")}
 
