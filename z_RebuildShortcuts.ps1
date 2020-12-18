@@ -1,6 +1,10 @@
+#This Script will fill a directory with Shortcuts directly to all of your Edge Profiles 
+#Then, I like to map them to my TaskBar as a toolbar - like so https://i.imgur.com/HPpuj9u.png
+$ShortcutsDir = Get-Item 'C:\EdgeProfs'
+
 $profiles     = Get-Item "$ENV:LOCALAPPDATA\Microsoft\Edge\User Data\*\Edge Profile.ico" | select -ExpandProperty Directory
 $EdgeExePath  = Get-Item "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-$ShortcutsDir = Get-Item 'C:\EdgeProfs'
+
 
 Get-ChildItem -Path $ShortcutsDir -Filter "*.lnk" | Remove-Item 
 
