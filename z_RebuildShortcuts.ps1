@@ -48,3 +48,5 @@ $ProfileProperties | %{
 
 }
 
+#If you want to Run through and open every separate profile, this will do that (Useful for Edge to rebuild it's list of profiles if One or more was restored)
+#Get-ChildItem -Path $ShortcutsDir | Select -ExpandProperty FullName | %{Invoke-Item $_}
